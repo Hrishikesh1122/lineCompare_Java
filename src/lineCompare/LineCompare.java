@@ -16,11 +16,22 @@ public class LineCompare {
 		else
 			System.out.println("Lines not equal");
 	}
+	public static void lengthCompare() {
+		double line1=dist(1,2,3,-4);
+		double line2=dist(1,-2,3,-4);
+		if(line1==line2)
+		     System.out.println("Lines are equal");
+		else if (line1 > line2)
+			System.out.println("Lines not equal, line1 > line2");
+		else
+			System.out.println("Lines are not equal , line2 > line1");
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to line comparison computation program");
         System.out.println(dist(1,2,3,-4));
         checkLength();
+        lengthCompare();
     }
 
 }
