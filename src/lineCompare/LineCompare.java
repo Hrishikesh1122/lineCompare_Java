@@ -1,5 +1,6 @@
 package lineCompare;
 import java.lang.Math;
+import java.util.Scanner;
 public class LineCompare {
 	
 	public static double dist(int x1,int y1,int x2,int y2) {
@@ -8,17 +9,17 @@ public class LineCompare {
 		return length;
 	}
 	
-	public static void checkLength() {
-		double line1=dist(1,2,3,-4);
-		double line2=dist(1,-2,3,-4);
+	public static void checkLength(int x1,int y1,int x2,int y2,int x11,int y11,int x22,int y22) {
+		double line1=dist(x1,y1,x2,y2);
+		double line2=dist(x11,y11,x22,y22);
 		if(line1==line2)
 		     System.out.println("Lines are equal");
 		else
 			System.out.println("Lines not equal");
 	}
-	public static void lengthCompare() {
-		double line1=dist(1,2,3,-4);
-		double line2=dist(1,-2,3,-4);
+	public static void lengthCompare(int x1,int y1,int x2,int y2,int x11,int y11,int x22,int y22) {
+		double line1=dist(x1,y1,x2,y2);
+		double line2=dist(x11,y11,x22,y22);
 		if(line1==line2)
 		     System.out.println("Lines are equal");
 		else if (line1 > line2)
@@ -29,9 +30,21 @@ public class LineCompare {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to line comparison computation program");
-        System.out.println(dist(1,2,3,-4));
-        checkLength();
-        lengthCompare();
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter values of coordinates of line1 ");
+	    int x1= sc.nextInt();
+		int y1= sc.nextInt();
+		int x2= sc.nextInt();
+		int y2= sc.nextInt();
+		System.out.println("Enter values of coordinates of line 2");
+		int x11= sc.nextInt();
+		int y11= sc.nextInt();
+		int x22= sc.nextInt();
+		int y22= sc.nextInt();
+	    System.out.println("Length of line1 is:"+dist(x1,y1,x2,y2));
+	    System.out.println("Length of line2 is:"+dist(x11,y11,x22,y22));
+        checkLength(x1,y1,x2,y2,x11,y11,x22,y22);
+        lengthCompare(x1,y1,x2,y2,x11,y11,x22,y22);
     }
 
 }
